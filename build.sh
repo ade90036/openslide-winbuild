@@ -67,7 +67,7 @@ cairo_ver="1.14.12"
 xml_ver="2.9.7"
 sqlite_year="2017"
 sqlite_ver="3.21.0"
-openslide_ver="3.4.1"
+openslide_ver="3.5.0"
 openslidejava_ver="0.12.2"
 
 # Derived package version strings
@@ -92,7 +92,9 @@ pixman_url="http://cairographics.org/releases/pixman-${pixman_ver}.tar.gz"
 cairo_url="http://cairographics.org/releases/cairo-${cairo_ver}.tar.xz"
 xml_url="ftp://xmlsoft.org/libxml2/libxml2-${xml_ver}.tar.gz"
 sqlite_url="http://www.sqlite.org/${sqlite_year}/sqlite-autoconf-${sqlite_vernum}.tar.gz"
-openslide_url="https://github.com/openslide/openslide/releases/download/v${openslide_ver}/openslide-${openslide_ver}.tar.xz"
+#openslide_url="https://github.com/ade90036/openslide/releases/download/v${openslide_ver}/openslide-${openslide_ver}.tar.xz"
+
+openslide_url="https://github.com/ade90036/openslide/archive/v3.5.0.tar.gz"
 openslidejava_url="https://github.com/openslide/openslide-java/releases/download/v${openslidejava_ver}/openslide-java-${openslidejava_ver}.tar.xz"
 
 # Unpacked source trees
