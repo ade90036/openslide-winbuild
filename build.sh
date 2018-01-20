@@ -20,7 +20,7 @@
 
 set -eE
 
-packages="configguess zlib libzip png jpeg tiff openjpeg iconv gettext ffi glib gdkpixbuf pixman cairo xml sqlite openslide openslidejava"
+packages="configguess zlib libzip png jpeg tiff openjpeg iconv gettext ffi glib gdkpixbuf pixman cairo xml sqlite openslide"
 
 # Tool configuration for Cygwin
 cygtools="wget zip pkg-config make cmake mingw64-i686-gcc-g++ mingw64-x86_64-gcc-g++ binutils nasm gettext-devel libglib2.0-devel"
@@ -85,16 +85,16 @@ tiff_url="http://download.osgeo.org/libtiff/tiff-${tiff_ver}.tar.gz"
 openjpeg_url="https://github.com/uclouvain/openjpeg/archive/v${openjpeg_ver}.tar.gz"
 iconv_url="https://github.com/win-iconv/win-iconv/archive/v${iconv_ver}.tar.gz"
 gettext_url="http://ftp.gnu.org/pub/gnu/gettext/gettext-${gettext_ver}.tar.xz"
-ffi_url="ftp://sourceware.org/pub/libffi/libffi-${ffi_ver}.tar.gz"
+ffi_url="https://www.mirrorservice.org/sites/sourceware.org/pub/libffi/libffi-${ffi_ver}.tar.gz"
 glib_url="http://ftp.gnome.org/pub/gnome/sources/glib/${glib_basever}/glib-${glib_ver}.tar.xz"
 gdkpixbuf_url="http://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/${gdkpixbuf_basever}/gdk-pixbuf-${gdkpixbuf_ver}.tar.xz"
 pixman_url="http://cairographics.org/releases/pixman-${pixman_ver}.tar.gz"
 cairo_url="http://cairographics.org/releases/cairo-${cairo_ver}.tar.xz"
-xml_url="ftp://xmlsoft.org/libxml2/libxml2-${xml_ver}.tar.gz"
+xml_url="http://xmlsoft.org/sources/libxml2-2.9.7.tar.gz"
 sqlite_url="http://www.sqlite.org/${sqlite_year}/sqlite-autoconf-${sqlite_vernum}.tar.gz"
 #openslide_url="https://github.com/ade90036/openslide/releases/download/v${openslide_ver}/openslide-${openslide_ver}.tar.xz"
 
-openslide_url="https://github.com/ade90036/openslide/archive/v3.5.0.tar.gz"
+openslide_url="https://github.com/ade90036/openslide/releases/download/v3.5.0/openslide-3.5.0.3.tar.gz"
 openslidejava_url="https://github.com/openslide/openslide-java/releases/download/v${openslidejava_ver}/openslide-java-${openslidejava_ver}.tar.xz"
 
 # Unpacked source trees
@@ -170,7 +170,7 @@ pixman_artifacts="libpixman-1-0.dll"
 cairo_artifacts="libcairo-2.dll"
 xml_artifacts="libxml2-2.dll"
 sqlite_artifacts="libsqlite3-0.dll"
-openslide_artifacts="libopenslide-0.dll openslide-quickhash1sum.exe openslide-show-properties.exe openslide-write-png.exe"
+openslide_artifacts="libopenslide-0.dll openslide-quickhash1sum.exe openslide-show-properties.exe openslide-write-png.exe deciphex_converter.exe"
 openslidejava_artifacts="openslide-jni.dll openslide.jar"
 
 # Update-checking URLs
@@ -575,6 +575,7 @@ build_one() {
         if [ -n "${ver_suffix}" ] ; then
             ver_suffix_arg="--with-version-suffix=${ver_suffix}"
         fi
+		
         do_configure \
                 "${ver_suffix_arg}"
         make $parallel
