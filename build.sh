@@ -94,7 +94,7 @@ xml_url="http://xmlsoft.org/sources/libxml2-2.9.7.tar.gz"
 sqlite_url="http://www.sqlite.org/${sqlite_year}/sqlite-autoconf-${sqlite_vernum}.tar.gz"
 #openslide_url="https://github.com/ade90036/openslide/releases/download/v${openslide_ver}/openslide-${openslide_ver}.tar.xz"
 
-openslide_url="https://github.com/ade90036/openslide/releases/download/v3.5.0/openslide-3.5.0.3.tar.gz"
+openslide_url="https://github.com/ade90036/openslide/releases/download/v3.5.0/openslide-3.5.0.4.tar.gz"
 openslidejava_url="https://github.com/openslide/openslide-java/releases/download/v${openslidejava_ver}/openslide-java-${openslidejava_ver}.tar.xz"
 
 # Unpacked source trees
