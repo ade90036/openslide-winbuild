@@ -94,7 +94,7 @@ xml_url="http://xmlsoft.org/sources/libxml2-2.9.7.tar.gz"
 sqlite_url="http://www.sqlite.org/${sqlite_year}/sqlite-autoconf-${sqlite_vernum}.tar.gz"
 #openslide_url="https://github.com/ade90036/openslide/releases/download/v${openslide_ver}/openslide-${openslide_ver}.tar.xz"
 
-openslide_url="https://github.com/ade90036/openslide/releases/download/v3.5.0/openslide-3.5.0.9.tar.gz"
+openslide_url="https://github.com/ade90036/openslide/releases/download/v3.5.0/openslide-3.5.0.10.tar.gz"
 openslidejava_url="https://github.com/openslide/openslide-java/releases/download/v${openslidejava_ver}/openslide-java-${openslidejava_ver}.tar.xz"
 
 # Unpacked source trees
@@ -158,7 +158,7 @@ openslidejava_dependencies="openslide"
 zlib_artifacts="zlib1.dll"
 libzip_artifacts="libzip-5.dll"
 png_artifacts="libpng16-16.dll"
-jpeg_artifacts="libjpeg-62.dll"
+jpeg_artifacts="libjpeg-8.dll"
 tiff_artifacts="libtiff-5.dll"
 openjpeg_artifacts="libopenjp2.dll"
 iconv_artifacts="iconv.dll"
@@ -431,7 +431,8 @@ build_one() {
         ;;
     jpeg)
         do_configure \
-                --without-turbojpeg
+                --without-turbojpeg \
+		--with-jpeg8
         make $parallel
         if [ "$can_test" = yes ] ; then
             make check
@@ -462,6 +463,7 @@ build_one() {
                 -DCMAKE_DISABLE_FIND_PACKAGE_LCMS=TRUE \
                 -DCMAKE_DISABLE_FIND_PACKAGE_LCMS2=TRUE \
                 -DBUILD_PKGCONFIG_FILES=ON \
+		-DBUILD_THIRDPARTY=OFF \
                 -DBUILD_DOC=OFF
         make $parallel
         make install
